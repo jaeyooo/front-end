@@ -1,0 +1,212 @@
+:root {
+  --sh-button-duration: 180ms;
+  --sh-button-ease: ease-out;
+}
+
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="action"],
+  a[class*="toggle"],
+  a[class*="receipt"],
+  a[class*="tour-guide"],
+  a[class*="request"],
+  a[class*="close"],
+  a[class*="cancel"],
+  a[class*="property-action"],
+  a[class*="nav-"]
+) {
+  transition:
+    transform var(--sh-button-duration) var(--sh-button-ease),
+    box-shadow var(--sh-button-duration) var(--sh-button-ease),
+    background-color var(--sh-button-duration) var(--sh-button-ease),
+    border-color var(--sh-button-duration) var(--sh-button-ease),
+    color var(--sh-button-duration) var(--sh-button-ease);
+}
+
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="action"],
+  a[class*="toggle"],
+  a[class*="receipt"],
+  a[class*="tour-guide"],
+  a[class*="request"],
+  a[class*="close"],
+  a[class*="cancel"],
+  a[class*="property-action"],
+  a[class*="nav-"]
+):focus-visible {
+  outline: 3px solid rgb(37 99 235 / 42%);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  :is(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    [role="button"],
+    a[class*="btn"],
+    a[class*="button"],
+    a[class*="action"],
+    a[class*="toggle"],
+    a[class*="receipt"],
+    a[class*="tour-guide"],
+    a[class*="request"],
+    a[class*="close"],
+    a[class*="cancel"],
+    a[class*="property-action"],
+    a[class*="nav-"]
+  ):hover:not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]) {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgb(23 25 35 / 10%);
+  }
+
+  :is(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    [role="button"],
+    a[class*="btn"],
+    a[class*="button"],
+    a[class*="action"],
+    a[class*="toggle"],
+    a[class*="receipt"],
+    a[class*="tour-guide"],
+    a[class*="request"],
+    a[class*="close"],
+    a[class*="cancel"],
+    a[class*="property-action"],
+    a[class*="nav-"]
+  ):hover:not(:disabled):not([aria-disabled="true"]):not([aria-busy="true"]) svg {
+    transform: translateX(2px);
+  }
+}
+
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="action"],
+  a[class*="toggle"],
+  a[class*="receipt"],
+  a[class*="tour-guide"],
+  a[class*="request"],
+  a[class*="close"],
+  a[class*="cancel"],
+  a[class*="property-action"],
+  a[class*="nav-"]
+):active:not(:disabled):not([aria-disabled="true"]) {
+  transform: translateY(0) scale(0.98);
+  transition-duration: 80ms;
+}
+
+#passwordToggle,
+#passwordToggle:hover,
+#passwordToggle:active {
+  transform: translateY(-50%);
+  transition: none;
+  box-shadow: none;
+}
+
+#passwordToggle:hover svg {
+  transform: none;
+}
+
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="action"],
+  a[class*="toggle"],
+  a[class*="receipt"],
+  a[class*="tour-guide"],
+  a[class*="request"],
+  a[class*="close"],
+  a[class*="cancel"],
+  a[class*="property-action"],
+  a[class*="nav-"]
+):disabled,
+:is(
+  button,
+  input[type="button"],
+  input[type="submit"],
+  input[type="reset"],
+  [role="button"],
+  a[class*="btn"],
+  a[class*="button"],
+  a[class*="action"],
+  a[class*="toggle"],
+  a[class*="receipt"],
+  a[class*="tour-guide"],
+  a[class*="request"],
+  a[class*="close"],
+  a[class*="cancel"],
+  a[class*="property-action"],
+  a[class*="nav-"]
+)[aria-disabled="true"] {
+  box-shadow: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :is(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    [role="button"],
+    a[class*="btn"],
+    a[class*="button"],
+    a[class*="action"],
+    a[class*="toggle"],
+    a[class*="receipt"],
+    a[class*="tour-guide"],
+    a[class*="request"],
+    a[class*="close"],
+    a[class*="cancel"],
+    a[class*="property-action"],
+    a[class*="nav-"]
+  ),
+  :is(
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"],
+    [role="button"],
+    a[class*="btn"],
+    a[class*="button"],
+    a[class*="action"],
+    a[class*="toggle"],
+    a[class*="receipt"],
+    a[class*="tour-guide"],
+    a[class*="request"],
+    a[class*="close"],
+    a[class*="cancel"],
+    a[class*="property-action"],
+    a[class*="nav-"]
+  ) svg {
+    transition: none !important;
+    transform: none !important;
+  }
+}
