@@ -1,0 +1,746 @@
+:root {
+  --sh-red: #e53935;
+  --sh-red-dark: #b91c1c;
+  --sh-blue: #2563eb;
+  --sh-blue-dark: #163a70;
+  --sh-white: #fff;
+  --sh-background: #f7f8fa;
+  --sh-text: #171923;
+  --sh-muted: #6b7280;
+  --sh-border: #e5e7eb;
+  --sh-success: #16a34a;
+  --sh-error: #dc2626;
+}
+
+/* Landing page */
+.lp-wrapper {
+  --lp-color-navy: var(--sh-blue-dark);
+  --lp-color-navy-light: var(--sh-blue);
+  --lp-color-gold: var(--sh-red);
+  --lp-color-gold-hover: var(--sh-red-dark);
+  --lp-color-beige: var(--sh-background);
+  --lp-color-white: var(--sh-white);
+  --lp-color-text: var(--sh-text);
+  --lp-color-text-muted: var(--sh-muted);
+  --lp-radius-sm: 4px;
+  --lp-radius-md: 8px;
+  --lp-radius-lg: 12px;
+  --lp-shadow-sm: 0 2px 8px rgb(23 25 35 / 5%);
+  --lp-shadow-md: 0 5px 14px rgb(23 25 35 / 8%);
+  --lp-shadow-lg: 0 10px 24px rgb(23 25 35 / 10%);
+}
+
+.lp-header {
+  background-color: rgb(255 255 255 / 96%);
+  box-shadow: 0 1px 0 var(--sh-border);
+}
+
+.lp-header.lp-scrolled {
+  background-color: rgb(255 255 255 / 76%);
+  box-shadow: 0 1px 0 rgb(229 231 235 / 75%);
+}
+
+.lp-logo,
+.lp-header.lp-scrolled .lp-logo,
+.lp-nav-link,
+.lp-header.lp-scrolled .lp-nav-link,
+.lp-header.lp-scrolled .lp-nav-link[aria-current="page"],
+.lp-btn-text {
+  color: var(--sh-blue-dark);
+}
+
+.lp-nav-link:hover,
+.lp-header.lp-scrolled .lp-nav-link:hover {
+  color: var(--sh-blue);
+}
+
+.lp-stats {
+  padding: clamp(1.5rem, 3vw, 2.25rem) 0;
+  background: var(--sh-blue-dark);
+}
+
+.lp-stats-grid {
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.lp-stat-item {
+  position: relative;
+  flex: 1 1 0;
+  min-width: 0;
+  min-height: 126px;
+  gap: 0.35rem;
+  padding: 1rem 1.25rem;
+  overflow: hidden;
+  background: linear-gradient(145deg, rgb(255 255 255 / 10%), rgb(255 255 255 / 5%));
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 12px;
+  box-shadow: inset 0 1px rgb(255 255 255 / 7%), 0 8px 20px rgb(7 19 35 / 10%);
+  text-align: center;
+}
+
+.lp-stat-item::before {
+  position: absolute;
+  top: 0;
+  right: 1.25rem;
+  left: 1.25rem;
+  height: 2px;
+  background: var(--sh-red);
+  border-radius: 0 0 2px 2px;
+  content: "";
+}
+
+.lp-stat-kicker {
+  color: #dbeafe;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.4;
+}
+
+.lp-stat-kicker span {
+  margin: 0 0.2rem;
+  color: var(--sh-white);
+}
+
+.lp-stat-number {
+  color: var(--sh-red);
+  font-family: inherit;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.lp-stat-label {
+  color: var(--sh-white);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+.lp-btn-primary {
+  color: var(--sh-white);
+  background-color: var(--sh-red-dark);
+}
+
+.lp-btn-primary:hover {
+  background-color: #991b1b;
+}
+
+.lp-btn-outline {
+  border-color: var(--sh-blue);
+  color: var(--sh-blue-dark);
+}
+
+.lp-btn-outline:hover {
+  color: var(--sh-white);
+  background-color: var(--sh-blue);
+}
+
+.lp-nav-link[aria-current="page"] {
+  text-decoration-color: var(--sh-red);
+}
+
+.lp-hero-overlay {
+  background: linear-gradient(105deg, rgb(22 58 112 / 88%), rgb(22 58 112 / 62%) 65%, rgb(185 28 28 / 34%));
+}
+
+.lp-search-panel,
+.lp-property-card,
+.lp-step-card,
+.lp-about-card,
+.lp-faq-item {
+  border: 1px solid var(--sh-border);
+  box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-input-group input:focus,
+.lp-input-group select:focus {
+  border-color: var(--sh-blue);
+}
+
+.lp-input-group input:focus-visible,
+.lp-input-group select:focus-visible,
+.lp-wrapper a:focus-visible,
+.lp-wrapper button:focus-visible {
+  outline: 3px solid rgb(37 99 235 / 34%);
+  outline-offset: 3px;
+}
+
+/* Property portal */
+.portal-page {
+  color: var(--sh-text);
+  background: var(--sh-background);
+}
+
+.portal-page::before {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(37 99 235 / 7%), transparent 34%),
+    radial-gradient(ellipse at 0% 100%, rgb(229 57 53 / 6%), transparent 32%),
+    var(--sh-background);
+}
+
+.portal-shell {
+  background: var(--sh-white);
+  border-color: var(--sh-border);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgb(23 25 35 / 8%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.portal-header {
+  background: var(--sh-white);
+  border-bottom-color: var(--sh-border);
+}
+
+.portal-header .brand-header {
+  color: var(--sh-blue-dark);
+}
+
+.brand-mark {
+  color: var(--sh-white);
+  background: var(--sh-red);
+  border-radius: 6px;
+}
+
+.brand-mark.brand-emblem-plate {
+  width: 64px;
+  height: 64px;
+  flex: 0 0 auto;
+  padding: 5px;
+  border: 1px solid rgb(22 58 112 / 12%);
+  border-radius: 15px;
+  background: var(--sh-white);
+  box-shadow: 0 4px 12px rgb(7 19 35 / 18%);
+}
+
+.brand-emblem {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.mobile-brand .brand-mark.brand-emblem-plate {
+  width: 54px;
+  height: 54px;
+}
+
+.portal-header .brand-mark.brand-emblem-plate {
+  width: 66px;
+  height: 66px;
+}
+
+.settings-panel,
+.property-card-lg {
+  border-color: var(--sh-border);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgb(23 25 35 / 5%);
+}
+
+.listing-price {
+  color: var(--sh-blue-dark);
+}
+
+.card-details .eyebrow {
+  color: var(--sh-blue);
+}
+
+.settings-nav {
+  background: var(--sh-background);
+  border-right-color: var(--sh-border);
+}
+
+.settings-nav-item:hover,
+.settings-nav-item.is-active {
+  color: var(--sh-blue-dark);
+  background: #edf3ff;
+}
+
+.settings-view a,
+.portal-content .eyebrow {
+  color: var(--sh-blue);
+}
+
+.portal-actions > .portal-sign-in {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.portal-actions > .portal-sign-in:hover {
+  background: #e3edff;
+}
+
+.portal-actions .settings-toggle,
+.submit-button,
+.action-btn:not(.secondary),
+.submit-request {
+  color: var(--sh-white);
+  background: var(--sh-red-dark);
+  border-color: var(--sh-red-dark);
+}
+
+.portal-actions .settings-toggle:hover,
+.submit-button:hover,
+.action-btn:not(.secondary):hover,
+.submit-request:hover {
+  background: #991b1b;
+  border-color: #991b1b;
+}
+
+.action-btn.secondary {
+  color: var(--sh-blue-dark);
+  background: var(--sh-white);
+  border-color: #c8d7f5;
+}
+
+.property-tour-guide {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #c8d7f5;
+}
+
+.property-tour-guide:hover {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: var(--sh-blue-dark);
+}
+
+.action-btn.secondary:hover {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: var(--sh-blue);
+}
+
+.catalog-notice {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.property-tour {
+  background: var(--sh-background);
+  border-color: var(--sh-border);
+}
+
+.property-tour-heading h3,
+.property-tour-badge,
+.property-tour-credit a {
+  color: var(--sh-blue-dark);
+}
+
+.property-tour-badge {
+  background: #eff4ff;
+}
+
+.close-button,
+.property-dialog {
+  border-color: var(--sh-border);
+  border-radius: 8px;
+}
+
+.portal-shell :focus-visible {
+  outline: 3px solid rgb(37 99 235 / 38%);
+  outline-offset: 2px;
+}
+
+body[data-theme="dark"] .portal-shell {
+  color: #e5eaf4;
+  background: #111827;
+  border-color: #29354b;
+}
+
+.portal-page[data-theme="dark"] {
+  color: #e5eaf4;
+  background: #111827;
+}
+
+.portal-page[data-theme="dark"]::before {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgb(37 99 235 / 12%), transparent 34%),
+    radial-gradient(ellipse at 0% 100%, rgb(229 57 53 / 8%), transparent 32%),
+    #111827;
+}
+
+body[data-theme="dark"] .portal-header {
+  background: #111827;
+  border-bottom-color: #29354b;
+}
+
+body[data-theme="dark"] .brand-header,
+body[data-theme="dark"] .portal-heading h2,
+body[data-theme="dark"] .card-details h3 {
+  color: #e5eaf4;
+}
+
+body[data-theme="dark"] .property-card-lg,
+body[data-theme="dark"] .settings-panel {
+  color: #e5eaf4;
+  background: #172033;
+  border-color: #29354b;
+}
+
+body[data-theme="dark"] .listing-price {
+  color: #bfdbfe;
+}
+
+body[data-theme="dark"] .settings-nav {
+  background: #111827;
+  border-right-color: #29354b;
+}
+
+body[data-theme="dark"] .settings-content,
+body[data-theme="dark"] .settings-view h2,
+body[data-theme="dark"] .settings-details dd {
+  color: #e5eaf4;
+}
+
+body[data-theme="dark"] .settings-nav-item {
+  color: #bfcae0;
+}
+
+body[data-theme="dark"] .settings-view p,
+body[data-theme="dark"] .settings-details dt {
+  color: #a9b5ca;
+}
+
+body[data-theme="dark"] .property-dialog {
+  color: #e5eaf4;
+  background: #172033;
+  border-color: #29354b;
+}
+
+body[data-theme="dark"] .settings-nav-item:hover,
+body[data-theme="dark"] .settings-nav-item.is-active {
+  color: #dbeafe;
+  background: #1e3a5f;
+}
+
+body[data-theme="dark"] .action-btn.secondary,
+body[data-theme="dark"] .property-tour-guide {
+  color: #bfdbfe;
+  background: #172033;
+  border-color: #38527a;
+}
+
+body[data-theme="dark"] .action-btn.secondary:hover,
+body[data-theme="dark"] .property-tour-guide:hover {
+  background: #1e3a5f;
+}
+
+/* Tenant dashboard */
+:root {
+  --ink: var(--sh-text);
+  --muted: var(--sh-muted);
+  --green: var(--sh-red);
+  --green-dark: var(--sh-blue-dark);
+  --green-light: #eff4ff;
+  --gold: var(--sh-blue);
+  --canvas: var(--sh-background);
+  --white: var(--sh-white);
+  --line: var(--sh-border);
+  --shadow: 0 2px 10px rgb(23 25 35 / 5%);
+}
+
+.sidebar {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+}
+
+.brand-mark {
+  color: var(--sh-white);
+  background: var(--sh-red);
+  border-color: rgb(255 255 255 / 25%);
+  border-radius: 6px;
+}
+
+.brand-caption,
+.help-card p {
+  color: #d4e0f5;
+}
+
+.nav-label,
+.sidebar-footer {
+  color: #a9c0e4;
+}
+
+.help-card a {
+  color: #ff5252;
+}
+
+.topbar {
+  background: rgb(255 255 255 / 96%);
+  backdrop-filter: blur(8px);
+}
+
+.summary-card,
+.panel {
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.overview-lease,
+.overview-payments,
+.overview-maintenance,
+.overview-activity {
+  --card-accent: var(--sh-blue);
+  --card-halo: #dce8ff;
+  --card-halo-soft: #f2f6ff;
+}
+
+.overview-payments,
+.overview-activity {
+  --card-accent: var(--sh-red);
+  --card-halo: #f8dedd;
+  --card-halo-soft: #fff5f5;
+}
+
+.summary-note.emphasis {
+  color: var(--sh-blue);
+}
+
+.overview-card:focus-visible,
+.content :focus-visible {
+  outline: 3px solid rgb(37 99 235 / 36%);
+  outline-offset: 2px;
+}
+
+.avatar,
+.summary-icon,
+.activity-mark,
+.payment-method-icon {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+}
+
+.request-button {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.request-button:hover {
+  background: #e3edff;
+  border-color: var(--sh-blue);
+}
+
+.rent-card {
+  color: var(--sh-white);
+  background: var(--sh-blue-dark);
+  border-color: var(--sh-blue-dark);
+  box-shadow: none;
+}
+
+.rent-card .eyebrow {
+  color: #dbeafe;
+}
+
+.rent-card .rent-due,
+.rent-card .rent-card-foot {
+  color: #dbeafe;
+}
+
+.rent-card .rent-action {
+  color: var(--sh-blue-dark);
+}
+
+.rent-card .paid-dot {
+  background: var(--sh-success);
+}
+
+.text-link,
+.lease-status,
+.status-pill.completed {
+  color: var(--sh-blue);
+}
+
+.lease-status::before {
+  background: var(--sh-success);
+}
+
+.status-pill.completed {
+  background: #ecfdf3;
+}
+
+.request-icon,
+.payment-method-icon {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+}
+
+.payment-insight {
+  background: #eff4ff;
+  border-color: #d6e2ff;
+}
+
+.payment-insight strong {
+  color: var(--sh-blue-dark);
+}
+
+.payment-insight p {
+  color: #52627a;
+}
+
+.submit-request {
+  color: var(--sh-white);
+  background: var(--sh-red);
+  border-color: var(--sh-red);
+}
+
+.submit-request:hover {
+  background: var(--sh-red-dark);
+}
+
+.lease-status-badge,
+.payment-history-status,
+.payment-status:not(.pending),
+.form-message[data-state="success"] {
+  color: var(--sh-success);
+}
+
+.lease-status-badge,
+.payment-status:not(.pending) {
+  background: #ecfdf3;
+}
+
+/* Login panel */
+.login-shell {
+  border-color: var(--sh-border);
+  border-radius: 12px;
+  box-shadow: 0 16px 48px rgb(23 25 35 / 16%);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+
+.brand-panel {
+  background:
+    linear-gradient(0deg, rgb(22 58 112 / 94%), rgb(22 58 112 / 75%) 60%, rgb(22 58 112 / 65%)),
+    url("../LOGIN%20PANEL/bg.jpg") center / cover;
+  background-position: center, calc(50% + var(--photo-offset-x, 0px)) calc(50% + var(--photo-offset-y, 0px));
+  background-size: auto, 112% 112%;
+  transition: background-position 180ms ease-out;
+  touch-action: pan-y;
+}
+
+.brand-panel::after {
+  height: 46%;
+  background: linear-gradient(transparent, rgb(9 22 44 / 25%));
+}
+
+.login-shell .brand-mark {
+  color: var(--sh-white);
+  background: var(--sh-red);
+  border-radius: 6px;
+}
+
+.login-shell .brand-mark.brand-emblem-plate {
+  border-radius: 15px;
+  background: var(--sh-white);
+}
+
+.brand-copy h1 span {
+  color: #ff3838;
+  font-style: italic;
+  text-shadow: 0 1px 8px rgb(7 19 35 / 55%);
+}
+
+.brand-panel .eyebrow {
+  color: #ff3838;
+  text-shadow: 0 1px 6px rgb(7 19 35 / 80%);
+}
+
+.property-icon {
+  color: #dbeafe;
+  background: rgb(37 99 235 / 28%);
+  border-radius: 6px;
+}
+
+.form-panel {
+  background: var(--sh-white);
+}
+
+.form-heading .eyebrow {
+  color: var(--sh-blue);
+}
+
+.form-heading h2 {
+  color: var(--sh-text);
+}
+
+.auth-choice {
+  background: var(--sh-background);
+  border-color: var(--sh-border);
+  border-radius: 6px;
+}
+
+.auth-choice button[aria-selected="true"] {
+  color: var(--sh-blue-dark);
+}
+
+.auth-choice button:focus-visible,
+.password-toggle:focus-visible {
+  outline-color: var(--sh-blue);
+}
+
+.field input:focus {
+  border-color: var(--sh-blue);
+  box-shadow: 0 0 0 3px rgb(37 99 235 / 14%);
+}
+
+.password-toggle:hover {
+  color: var(--sh-blue-dark);
+  background: #eff4ff;
+}
+
+.remember-option input:checked + .switch-track {
+  background: var(--sh-blue);
+}
+
+.text-link {
+  color: var(--sh-blue);
+}
+
+.form-panel .submit-button {
+  color: var(--sh-white);
+  background: var(--sh-red);
+  border-color: var(--sh-red);
+}
+
+.form-panel .submit-button:hover {
+  background: var(--sh-red-dark);
+}
+
+.form-panel .submit-button:focus-visible {
+  outline-color: rgb(229 57 53 / 32%);
+}
+
+.status-message[data-state="success"] {
+  color: var(--sh-success);
+}
+
+.ai-note {
+  background: var(--sh-background);
+  border-color: var(--sh-border);
+}
+
+.ai-note svg,
+.ai-note strong {
+  color: var(--sh-blue-dark);
+}
+
+@media (max-width: 900px) {
+  .lp-nav-menu {
+    background: var(--sh-white);
+  }
+
+  .lp-nav-link,
+  .lp-header.lp-scrolled .lp-nav-link {
+    color: var(--sh-blue-dark);
+  }
+}
+
+@media (max-width: 640px) {
+  .portal-shell {
+    border-radius: 0;
+  }
+}
